@@ -31,3 +31,7 @@ def multiply_digit_by_position(array_of_strings)
 	end
 	empty_array
 end
+
+def add(array)
+	array.inject(:+)
+end
