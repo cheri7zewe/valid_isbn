@@ -40,4 +40,8 @@ class TestDashesSpaces < Minitest::Test
 		assert_equal("12345", string_remove_space_or_dash("123-45"))
 	end
 
+	def test_string_with_dash_and_space
+		assert_equal("0123456789", string_remove_space_or_dash(" -01-2 3  4-- -56789"))
+	end
+
 end
