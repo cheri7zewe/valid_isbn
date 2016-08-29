@@ -5,3 +5,7 @@ def valid_isbn?(num)
 		false
 	end
 end
+
+def string_to_array(string)
+	string.split
+end
