@@ -25,14 +25,14 @@ class TestConvertStringToArry < Minitest::Test
 	end
 
 	def test_string_returns_array
-		assert_equal(["12345"], string_to_array("12345"))
+		assert_equal(["1", "2", "3", "4", "5"], string_to_array("12345"))
 	end
 
 end
 
 class TestDashesSpaces < Minitest::Test
 
-	def test_string_with_space_deletes_dash
+	def test_string_with_space_deletes_space
 		assert_equal("12345", string_remove_space_or_dash("123 45"))
 	end
 

@@ -7,7 +7,7 @@ def valid_isbn?(num)
 end
 
 def string_to_array(string)
-	string.split
+	string.split("")
 end
 
 def string_remove_space_or_dash(string)
