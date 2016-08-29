@@ -45,3 +45,10 @@ class TestDashesSpaces < Minitest::Test
 	end
 
 end
+
+# class IsbnSumcheck < Minitest::Test 
+
+# 	def test_the_sum_of_an_isbn
+# 		assert_equal()
+
+# end

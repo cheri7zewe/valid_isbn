@@ -14,7 +14,7 @@ def string_remove_space_or_dash(string)
 	remove = [" ", "-"]
 
 	remove.each do |symbol|
-		string.delete! symbol if string.include? symbol
+		string.delete! symbol #if string.include? symbol
 	end
 	string
 end
