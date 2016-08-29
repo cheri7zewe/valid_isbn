@@ -52,8 +52,12 @@ class IsbnSumcheck < Minitest::Test
 		assert_equal([7, 8, 6, 4, 15, 54, 28, 56, 54], multiply_digit_by_position(["7", "4", "2", "1", "3", "9", "4", "7", "6", "1"]))
 	end
 
-	def adding_array(array)
-		array.inject(:+)
+	def test_adding_numbers_in_array
+		assert_equal(232, add([7, 8, 6, 4, 15, 54, 28, 56, 54]))
+	end
+
+	def test_to_return_final_number_in_isbn
+		assert_equal(1, modulos_of_sum(232))
 	end
 
 end

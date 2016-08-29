@@ -35,3 +35,7 @@ end
 def add(array)
 	array.inject(:+)
 end
+
+def modulos_of_sum(sum)
+	sum % 11
+end
