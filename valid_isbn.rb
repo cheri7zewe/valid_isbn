@@ -19,14 +19,15 @@ def string_remove_space_or_dash(string)
 	string
 end
 
-# def string_remove_space_or_dash(string)
-# 	if string.include? (" ") && ("-")
-# 		string.delete (" ") && ("-")
-# 	elsif string.include? (" ")
-# 		string.delete (" ")
-# 	elsif string.include? ("-")
-# 		string.delete ("-")
-# 	else
-# 		string 
-# 	end
-# end
+def multiply_digit_by_position(array_of_strings)
+
+	empty_array = []
+
+	array_of_strings.each_with_index do |value, index|
+		if index < 9
+			return_value = (index + 1) * value.to_i
+			empty_array.push(return_value)
+		end
+	end
+	empty_array
+end
