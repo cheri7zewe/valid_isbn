@@ -60,4 +60,8 @@ class IsbnSumcheck < Minitest::Test
 		assert_equal(1, modulos_of_sum(232))
 	end
 
+	def test_modulos_of_sum_for_x
+		assert_equal("x", modulos_of_sum(21))
+	end
+
 end

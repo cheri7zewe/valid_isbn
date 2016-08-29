@@ -37,5 +37,11 @@ def add(array)
 end
 
 def modulos_of_sum(sum)
-	sum % 11
+	mod = sum % 11
+
+	if mod == 10
+		"x"
+	else
+		mod
+	end
 end
