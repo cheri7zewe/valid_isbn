@@ -29,3 +29,15 @@ class TestConvertStringToArry < Minitest::Test
 	end
 
 end
+
+class TestDashesSpaces < Minitest::Test
+
+	def test_string_with_space_deletes_dash
+		assert_equal("12345", string_remove_space_or_dash("123 45"))
+	end
+
+	def test_string_with_dash_deletes_dash
+		assert_equal("12345", string_remove_space_or_dash("123-45"))
+	end
+
+end
