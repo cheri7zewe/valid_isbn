@@ -19,11 +19,11 @@ def string_remove_space_or_dash(string)
 	string
 end
 
-def multiply_digit_by_position(array_of_strings)
+def multiply_digit_by_position(array_of_numbers)
 
 	empty_array = []
 
-	array_of_strings.each_with_index do |value, index|
+	array_of_numbers.each_with_index do |value, index|
 		if index < 9
 			return_value = (index + 1) * value.to_i
 			empty_array.push(return_value)
