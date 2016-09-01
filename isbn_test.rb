@@ -51,12 +51,28 @@ class TestForX < Minitest::Test
 
 end
 
-class Isbn10MathFunction < Minitest::Test
+class TestIsbn10MathFunction < Minitest::Test
 
 	def test_for_10_digit_math
 		assert_equal(true, valid_10_digit_isbn?(["0","4","7","1","9","5","8","6","9","7"]))
         assert_equal(false, valid_10_digit_isbn?(["1", "4", "7", "1", "9", "5", "8", "6", "9","7"]))
         assert_equal(true, valid_10_digit_isbn?(["8","7","7","1","9","5","8","6","9","10"]))
     end
+
+
+	def test_for_non_numeric_characters_in_my_array?
+    	# true if anything other than digit/can i include this in disallowed function??
+     	assert_equal(nil, only_numbers_in_my_array?(["1","2","3","4","5","6","7","8","9","0"]))
+      	assert_equal(true, only_numbers_in_my_array?(["1","2","3","?","5","6","7","8","9","0"]))
+      	assert_equal(true, only_numbers_in_my_array?(["n","2","3","x","5","p","7","8","9","0"]))
+    end
+
+end
+
+class TestIsbn13MathFunction < Minitest::Test
+
+	def test_for_thirteen_character_math
+       assert_equal(true, valid_13_digit_isbn?(["9","7","8","0","1","5","6","0","2","7","3","2","8"]))
+   end
 
 end
