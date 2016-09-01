@@ -1,4 +1,4 @@
-require_relative "valid_isbn.rb"
+require_relative "isbn.rb"
 require "minitest/autorun"
 
 class TestValidIsbn < Minitest::Test
@@ -9,11 +9,6 @@ class TestValidIsbn < Minitest::Test
 
 	def test_valid_10_digit_isbn_string_returns_true()
 		assert_equal(true, valid_isbn?("0471958697"))
-	end
-
-	def test_an_invalad_10_digit_isbn()
-		skip("not yet") 
-		assert_equal(false, valid_isbn?("0471958699"))
 	end
 
 end
@@ -46,22 +41,22 @@ class TestDashesSpaces < Minitest::Test
 
 end
 
-class IsbnSumcheck < Minitest::Test 
+class TestForX < Minitest::Test
 
-	def test_to_multiply_digit_by_position
-		assert_equal([7, 8, 6, 4, 15, 54, 28, 56, 54], multiply_digit_by_position(["7", "4", "2", "1", "3", "9", "4", "7", "6", "1"]))
-	end
+	def test_for_x_to_be_replaced_with_10
+		assert_equal(["0", "8", "0", "4", "4", "2", "9", "5", "7", "10"], update_check_digit_containing_X(["0", "8", "0", "4", "4", "2", "9", "5", "7", "x"]))
+		assert_equal(["0","8","0","4","4","2","9","5","7","8"], update_check_digit_containing_X(["0","8","0","4","4","2","9","5","7","8"]))
+        assert_equal(["0","8","0","4","x","2","9","5","7","8"], update_check_digit_containing_X(["0","8","0","4","x","2","9","5","7","8"]))
+    end
 
-	def test_adding_numbers_in_array
-		assert_equal(232, add([7, 8, 6, 4, 15, 54, 28, 56, 54]))
-	end
+end
 
-	def test_to_return_final_number_in_isbn
-		assert_equal(1, modulos_of_sum(232))
-	end
+class Isbn10MathFunction < Minitest::Test
 
-	def test_modulos_of_sum_for_x
-		assert_equal("x", modulos_of_sum(21))
-	end
+	def test_for_10_digit_math
+		assert_equal(true, valid_10_digit_isbn?(["0","4","7","1","9","5","8","6","9","7"]))
+        assert_equal(false, valid_10_digit_isbn?(["1", "4", "7", "1", "9", "5", "8", "6", "9","7"]))
+        assert_equal(true, valid_10_digit_isbn?(["8","7","7","1","9","5","8","6","9","10"]))
+    end
 
 end
