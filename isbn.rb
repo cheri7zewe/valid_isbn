@@ -73,6 +73,7 @@ def valid_13_digit_isbn?(isbn_array_of_nums)
 	end
 
 	sum = sum % 10
+
 	check_digit = (10 - sum)
 		if check_digit == 10
 			check_digit = 0
@@ -82,4 +83,26 @@ def valid_13_digit_isbn?(isbn_array_of_nums)
 		else
 			false
 		end
+end
+
+def valid_isbn_10_or_13(isbn_string_of_nums)
+	no_invalid_char = string_remove_space_or_dash(isbn_string_of_nums)
+	isbn_array = string_to_array(no_invalid_char)
+
+	if isbn_array.length == 10
+		x_equals_10 = update_check_digit_containing_X(isbn_array)
+		if only_numbers_in_my_array?(x_equals_10) == false
+			false
+		else
+			valid_10_digit_isbn?(x_equals_10)
+		end
+	elsif isbn_array.length == 13
+		if only_numbers_in_my_array?(isbn_array) == false
+			false
+		else
+			valid_13_digit_isbn?(isbn_array)
+		end
+	else
+		false
+	end
 end

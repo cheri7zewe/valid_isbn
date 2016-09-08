@@ -73,6 +73,7 @@ class TestIsbn13MathFunction < Minitest::Test
 
 	def test_for_thirteen_character_math
        assert_equal(true, valid_13_digit_isbn?(["9","7","8","0","1","5","6","0","2","7","3","2","8"]))
+       assert_equal(false, valid_13_digit_isbn?(["9","8","5","0","2","4","1","4","3","0","4","6","3"]))
    end
 
 end
