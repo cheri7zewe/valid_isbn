@@ -1,5 +1,5 @@
 def valid_isbn?(num)
-	if num.length == 10 #|| num.length == 13
+	if num.length == 10
 		true
 	else
 		false
@@ -14,7 +14,7 @@ def string_remove_space_or_dash(string)
 	remove = [" ", "-"]
 
 	remove.each do |symbol|
-		string.delete! symbol #if string.include? symbol
+		string.delete! symbol
 	end
 	string
 end

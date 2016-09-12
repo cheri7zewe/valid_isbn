@@ -2,7 +2,7 @@ require "sinatra"
 require_relative "isbn.rb"
 
 get "/" do
-	erb :ask_isbn	
+	erb :ask_isbn, :locals => {:message => ""}	
 end
 
 post "/ask_isbn" do 
@@ -14,5 +14,7 @@ post "/ask_isbn" do
 		return_result = "invalid"
 	end
 
-	"This ISBN is #{return_result}"
+	# message = "Your ISBN, #{input_number}, is #{return_result}."
+	erb :ask_isbn, :locals => {:message => "Your ISBN, #{input_number}, is #{return_result}."}
+
 end
