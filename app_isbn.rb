@@ -14,7 +14,6 @@ post "/ask_isbn" do
 		return_result = "invalid"
 	end
 
-	# message = "Your ISBN, #{input_number}, is #{return_result}."
 	erb :ask_isbn, :locals => {:message => "Your ISBN, #{input_number}, is #{return_result}."}
 
 end

@@ -1,5 +1,5 @@
-def valid_isbn?(num)
-	if num.length == 10
+def valid_isbn?(isbn_string)
+	if isbn_string.length == 10 || isbn_string.length == 13
 		true
 	else
 		false
@@ -10,13 +10,13 @@ def string_to_array(string)
 	string.split("")
 end
 
-def string_remove_space_or_dash(string)
+def string_remove_space_and_dash(isbn_string)
 	remove = [" ", "-"]
 
 	remove.each do |symbol|
 		string.delete! symbol
 	end
-	string
+	isbn_string
 end
 
 def update_check_digit_containing_X(isbn_number_array)
