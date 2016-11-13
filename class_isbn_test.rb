@@ -21,6 +21,7 @@ class TestIsbn <Minitest::Test
 
 	def test_a_nonvalid_isbn13_returns_false
 		assert_equal(fasle, valid_isbn?("97801;6027328"))
+	end
 
 end
 

@@ -1,7 +1,6 @@
 (current files: isbn & isbn_test)
 ISBN PROJECT
 
-[11:47]  
 AIM:
 Create a program that will verify if a string is a valid ISBN number (see requirements below).
 Use a TDD approach.
